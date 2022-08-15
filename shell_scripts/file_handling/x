@@ -1,0 +1,289 @@
+file = acpi
+file = adduser.conf
+file = alternatives
+file = anacrontab
+file = apache2
+file = apg.conf
+file = apm
+file = apparmor
+file = apparmor.d
+file = apport
+file = apt
+file = aptdaemon
+file = asterisk
+file = at.deny
+file = at-spi2
+file = avahi
+file = bash.bashrc
+file = bash_completion
+file = bash_completion.d
+file = bindresvport.blacklist
+file = blkid.conf
+file = blkid.tab
+file = bluetooth
+file = bonobo-activation
+file = brlapi.key
+file = brltty
+file = brltty.conf
+file = ca-certificates
+file = ca-certificates.conf
+file = calendar
+file = chatscripts
+file = click
+file = colord.conf
+file = compizconfig
+file = console-setup
+file = cowpoke.conf
+file = cracklib
+file = cron.d
+file = cron.daily
+file = cron.hourly
+file = cron.monthly
+file = crontab
+file = cron.weekly
+file = cups
+file = cupshelpers
+file = dbus-1
+file = dconf
+file = debconf.conf
+file = debian_version
+file = default
+file = deluser.conf
+file = depmod.d
+file = devscripts.conf
+file = dhcp
+file = dictionaries-common
+file = dkms
+file = dnsmasq.d
+file = doc-base
+file = dpkg
+file = dput.cf
+file = drirc
+file = emacs
+file = environment
+file = firefox
+file = fonts
+file = freetds
+file = fstab
+file = fstab.d
+file = fuse.conf
+file = gai.conf
+file = gconf
+file = gdb
+file = ghostscript
+file = gnome
+file = gnome-app-install
+file = gnome-vfs-2.0
+file = groff
+file = group
+file = group-
+file = grub.d
+file = gshadow
+file = gshadow-
+file = gtk-2.0
+file = gtk-3.0
+file = hdparm.conf
+file = host.conf
+file = hostname
+file = hosts
+file = hosts.allow
+file = hosts.deny
+file = hp
+file = ifplugd
+file = iftab
+file = ImageMagick
+file = init
+file = init.d
+file = initramfs-tools
+file = inputrc
+file = insserv
+file = insserv.conf
+file = insserv.conf.d
+file = iproute2
+file = issue
+file = issue.net
+file = java-7-openjdk
+file = kbd
+file = kernel
+file = kernel-img.conf
+file = kerneloops.conf
+file = ldap
+file = ld.so.cache
+file = ld.so.conf
+file = ld.so.conf.d
+file = legal
+file = libaudit.conf
+file = libnl-3
+file = libpaper.d
+file = libreoffice
+file = lightdm
+file = lintianrc
+file = locale.alias
+file = localtime
+file = logcheck
+file = login.defs
+file = logrotate.conf
+file = logrotate.d
+file = lsb-release
+file = ltrace.conf
+file = magic
+file = magic.mime
+file = mailcap
+file = mailcap.order
+file = manpath.config
+file = mime.types
+file = mke2fs.conf
+file = modprobe.d
+file = modules
+file = modules-load.d
+file = mtab
+file = mtab.fuselock
+file = mtools.conf
+file = mysql
+file = nanorc
+file = netscsid.conf
+file = network
+file = NetworkManager
+file = networks
+file = newt
+file = nsswitch.conf
+file = obex-data-server
+file = opt
+file = os-release
+file = pam.conf
+file = pam.d
+file = papersize
+file = passwd
+*********File found*********
+root
+daemon
+bin
+sys
+sync
+games
+man
+lp
+mail
+news
+uucp
+proxy
+www-data
+backup
+list
+irc
+gnats
+nobody
+libuuid
+syslog
+messagebus
+usbmux
+dnsmasq
+avahi-autoipd
+kernoops
+rtkit
+saned
+whoopsie
+speech-dispatcher
+avahi
+lightdm
+colord
+hplip
+pulse
+apuser
+clickpkg
+asterisk
+sshd
+mysql
+file = passwd-
+file = pbuilder
+file = pbuilderrc
+file = pcmcia
+file = perl
+file = pki
+file = pm
+file = pnm2ppa.conf
+file = polkit-1
+file = popularity-contest.conf
+file = ppp
+file = profile
+file = profile.d
+file = protocols
+file = pulse
+file = python
+file = python2.7
+file = python3
+file = python3.4
+file = radiusclient
+file = rc0.d
+file = rc1.d
+file = rc2.d
+file = rc3.d
+file = rc4.d
+file = rc5.d
+file = rc6.d
+file = rc.local
+file = rcS.d
+file = reportbug.conf
+file = resolvconf
+file = resolv.conf
+file = rmt
+file = rpc
+file = rsyslog.conf
+file = rsyslog.d
+file = samba
+file = sane.d
+file = securetty
+file = security
+file = selinux
+file = sensors3.conf
+file = sensors.d
+file = services
+file = sgml
+file = shadow
+file = shadow-
+file = shells
+file = signond.conf
+file = signon-ui
+file = sipwitch.conf
+file = sipwitch.d
+file = skel
+file = sound
+file = speech-dispatcher
+file = ssh
+file = ssl
+file = subgid
+file = subgid-
+file = subuid
+file = subuid-
+file = sudoers
+file = sudoers.d
+file = sysctl.conf
+file = sysctl.d
+file = systemd
+file = terminfo
+file = thunderbird
+file = timezone
+file = tpvmlp.conf
+file = ucf.conf
+file = udev
+file = udisks2
+file = ufw
+file = updatedb.conf
+file = update-manager
+file = update-motd.d
+file = update-notifier
+file = UPower
+file = upstart-xsessions
+file = usb_modeswitch.conf
+file = usb_modeswitch.d
+file = vim
+file = vmware-tools
+file = vtrgb
+file = wgetrc
+file = wodim.conf
+file = wpa_supplicant
+file = X11
+file = xdg
+file = xml
+file = xul-ext
+file = zsh_command_not_found

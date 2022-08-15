@@ -1,0 +1,25 @@
+
+message boxes
+% dialog --title 'Message' --msgbox 'Hello, world!' 5 20
+
+
+yes/no boxes
+% dialog --title "Message"  --yesno "Are you having\ fun?" 6 25
+
+
+info boxes
+% dialog --infobox "Please wait" 10 30 ; sleep 4
+
+text boxes
+% dialog --textbox /etc/profile 22 70
+
+
+input boxes
+% dialog --inputbox "Enter your name:" 8 40 2>answer
+
+
+menu boxes
+% dialog --menu <text> <height> <width> <menu-height> [<tag><item>]
+
+% dialog --menu "Choose one:" 10 30 3 1 red 2 green\ 3 blue
+

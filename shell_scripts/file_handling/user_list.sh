@@ -1,0 +1,16 @@
+#!/bin/bash
+
+cd /etc
+for file in `ls`
+do
+  echo "file = $file"
+  if [ "$file" == "passwd" ]; then
+    echo "*********File found*********"
+    while read line
+    do
+      user=`echo $line | cut -d : -f 1`
+      echo $user | tee -a /tmp/user.txt
+    done < $file
+  break
+  fi
+done

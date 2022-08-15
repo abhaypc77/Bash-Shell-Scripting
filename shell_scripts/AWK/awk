@@ -1,0 +1,51 @@
+awk - pattern scanning and text processing language
+Awk breaks each line of input passed to it into fields. By default, a field is a string of consecutive characters delimited by whitespace, though there are options for changing this. Awk parses and operates on each separate field. This makes it ideal for handling structured text files -- especially tables -- data organized into consistent chunks, such as rows and columns.
+
+Awk  'pattern { action }' file
+
+FNR       current record number in FILENAME.
+NF        number of fields in the current record.
+NR        current record number in the total input stream.
+
+
+awk '{print "FNR=",FNR, "NF=", NF, "NR=", NR; print $0}' file file
+
+awk '/dev/'  file
+ 
+awk '/dev/ { print $0 }'
+
+awk '/none|tmp/ { print $0 }'
+
+awk '/dev/ {print $1 $2}
+
+awk '/none|tmp/ { print "name =" $1 "    size =" $2 }'
+
+df -h | awk 'NR==2 {print $0}'
+
+df -h | awk 'NR==2 && NR==4  {print $0}'
+
+awk -F : ' {print $1} ' /etc/passwd
+
+echo "upstatedelhistatempstatekerlastatekashmirstate" | awk -F state '{print $2, $3, $4, $5}'
+
+echo "upst atedelhist atempst atekerlast atekashmirst ate" | awk -F "st ate" '{print $1, $2, $3, $4, $5}'
+
+df -h | awk ' /^\/dev/ {print $0}'
+
+df -h | awk ' /dev$/ {print $0}'
+
+awk -F : '$1 ~/^a/ && $7 ~/sh/ {print $1}' /etc/passwd
+
+awk -F : '$1 ~/^a/ || $7 ~/sh/ {print $1}' /etc/passwd
+
+awk '{ print "sum=" $1+$2+$3 }' file1
+
+awk '{ print "avg=" $1+$2+$3+$4+$5/NF }' file1
+
+awk '{ sum=$1+$2+$3+$4+$5; avg=sum/NF; print "sum ="sum, "avg=" avg }' file1
+
+df -h | grep -v Filesystem | awk '{$1=$2=$3=$4="";print}'| awk '{printf "%s""-----",$0}
+
+awk 'BEGIN {x=5 ; if (x %2 == 0) print "even"; else print "odd"}'
+
+ 
