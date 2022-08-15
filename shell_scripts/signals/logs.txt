@@ -1,0 +1,5 @@
+Inside shell trap2.sh
+Creating temp file temp.59247
+Entering while loop, to process task
+CTRL-C signal received.....thus exiting
+Removing temp file temp.59247

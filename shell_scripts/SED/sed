@@ -1,0 +1,56 @@
+Syntax:
+========
+
+sed <options>  '/pattern/action'  file
+
+p	Prints the line
+d	Deletes the line
+s/pattern1/pattern2/	Substitutes the first occurrence of pattern1 with pattern2.
+
+
+
+ sed  ''  file 
+
+ sed -n  '1p'  file
+
+ sed -n  '1,3p'  file 
+
+ sed -n '1,+2p'  file
+
+ sed '1d'  file  
+
+ sed '1,3d'  file
+
+ sed '1,+2d'  file
+
+ sed -i '2d' file
+
+ sed -i.bak '1d' file
+
+ sed -n '/little/p' file
+
+ sed -n '/^little/p' file
+
+ sed -n '/lamp$/p' file
+
+ sed '/little/d' file
+
+ sed 's/one/1/' file1
+
+ sed 's/one/1/g' file1
+
+ sed 's/one/1/gi' file1 > newfile
+
+ sed -i 's/one/1/gi' file1
+
+ sed '2s/one/1/g' file1
+
+ sed '/^$/d' file1
+
+ sed -e 's/one/1/g' -e 's/two/2/g' file1
+
+
+
+
+
+

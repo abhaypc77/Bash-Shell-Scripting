@@ -1,0 +1,146 @@
+#!/bin/bash
+
+
+LOG_PATH="~"
+LOG_DIR="codesync"
+DEBUG=1;
+DEBUG_FILE=""
+
+
+usage()
+{
+  echo "Usage: $0 -b <branch path> -l <log file> -d <debug level>"
+  echo "   -b|--branch: Branch to be updated."
+  echo "   -l|--log   : Log file which contains code update logs."
+  echo "   -d|--debug : Optional parameter, 0: No Logs, 1: Important Logs, 2: All Logs."
+  echo "   -h|--help  : Display Help."
+  exit 0
+}
+
+
+
+logger()
+{
+  [ ! $DEBUG ] && return 
+
+  echo "`date`|$0|$*" >> $DEBUG_FILE
+}
+
+
+codesync_init()
+{
+  if [ ! -d $LOG_PATH/$LOG_DIR ]; then
+    mkdir $LOG_PATH/$LOG_DIR
+    if [ $? -eq 0 ]; then
+      echo "Created directory codesync."
+    else
+      echo "Error: Unable to create directory codesync."
+      exit 1
+    fi 
+  fi
+
+  if [ -f $LOG_PATH/$LOG_DIR/$DEBUG_FILE ]; then
+    rm $DEBUG_FILE
+  else
+    touch $DEBUG_FILE 
+    logger "********* Debug for CodeSync Branch : [$CODE_BRANCH] ********"
+  fi 
+ 
+}
+
+sync_android()
+{
+  logger "Starting Android sync for Branch : $CODE_BRANCH"
+  cd $CODE_BRANCH
+
+  if [ $DEBUG -eq 2 ]; then
+    repo sync -c -d -q  2>$LOG_PATH/$LOG_DIR/reposync.log
+  else
+    repo sync -c -d -q
+  fi 
+
+  if [ $? -eq 0 ]; then
+    logger "Android sync completed."
+  else
+    logger "Error: Android sync failed."
+    exit 2
+  fi
+
+}
+
+build_android()
+{
+  lunch_opt=$1
+  cd $CODE_BRANCH
+  
+  source build/envsetup.sh
+  lunch $lunch_opt
+
+  kheader
+  if [$? -ne 0 ]; then
+    logger "Error: Android Build Failed."
+    exit 3
+  fi 
+
+  if [ $DEBUG -eq 2 ]; then
+    make -j >> $LOG_PATH/$LOG_DIR/androidbuild.log
+  else
+    make -j 
+  fi
+
+  if [$? -ne 0 ]; then
+    logger "Error: Android Build Failed."
+    exit 3
+  fi 
+}
+
+###################### MAIN ############################
+
+  
+while [ $# -ge 1 ]
+do
+opt="$1"
+
+  case $opt in
+    -b|--branch)
+    CODE_BRANCH="$2"
+    shift 2 
+    ;;
+    -l|--log)
+    DEBUG_FILE="$2"
+    shift 2
+    ;;
+    -d)
+    DEBUG="$2"
+    shift 2
+    ;;
+    -h|--help)
+    usage 
+    ;; 
+    *)
+    usage
+    ;;
+  esac
+done
+
+if [ ! "$CODE_BRANCH" ]; then
+  echo "Error: Code Branch Required."
+  usage
+fi	
+
+if [ "$DEBUG_FILE"  -a ! $DEBUG_FLAG ]; then
+  DEBUG_FLAG=1
+fi	
+
+if [ $DEBUG_FLAG -a ! "$DEBUG_FILE" ]; then
+  DEBUG_FILE="codesync.log"
+fi
+
+codesync_init
+exit 0
+sync_android
+build_android
+
+
+exit 0
+

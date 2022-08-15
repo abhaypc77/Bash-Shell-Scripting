@@ -1,0 +1,39 @@
+Syntax:
+========
+
+sed <options>  /pattern/action  file
+
+p	Prints the line
+d	Deletes the line
+s/pattern1/pattern2/	Substitutes the first occurrence of pattern1 with pattern2.
+
+
+
+ sed -e 'd' /etc/passwd
+
+sed '1d' 
+
+sed '1, 5d' 
+
+
+'4,10d'	Lines starting from 4th till 10th are deleted
+'10,4d'	Only 10th line is deleted, because sed does not work in reverse direction.
+'4,+5d'	This will match line 4 in the file, delete that line, continue to delete the next five lines, and then cease its deletion and print the rest
+'2,5!d'	This will deleted everything except starting from 2nd till 5th line.
+'1~3d'	This deletes the first line, steps over the next three lines, and then deletes the fourth line. Sed continues applying this pattern until the end of the file.
+'2~2d'	This tells sed to delete the second line, step over the next line, delete the next line, and repeat until the end of the file is reached.
+'4,10p'	Lines starting from 4th till 10th are printed
+'4,d'	This would generate syntax error.
+',10d'	This would also generate syntax error.
+
+
+cat /etc/passwd | sed -n '1,3p'
+at /etc/passwd | sed 's/root/amrood/'
+
+
+
+
+
+
+
+

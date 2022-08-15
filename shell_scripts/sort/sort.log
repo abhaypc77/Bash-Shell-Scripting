@@ -1,0 +1,17 @@
+Sat Jun 17 05:03:48 PDT 2017|./sort3.sh|*********Debug for Sort*********
+Sat Jun 17 05:03:48 PDT 2017|./sort3.sh|*********Starting**********
+Sat Jun 17 05:03:48 PDT 2017|./sort3.sh|Calling method sort_data() with UNSORTED_FILE=data, DEBUG_FLAG=2
+Sat Jun 17 05:03:48 PDT 2017|./sort3.sh|Reading file data 
+Sat Jun 17 05:03:48 PDT 2017|./sort3.sh|name=bbbb   percentage=70
+Sat Jun 17 05:03:48 PDT 2017|./sort3.sh|name=dddd   percentage=85
+Sat Jun 17 05:03:48 PDT 2017|./sort3.sh|name=aaaa   percentage=60
+Sat Jun 17 05:03:48 PDT 2017|./sort3.sh|name=cccc   percentage=50
+Sat Jun 17 05:03:48 PDT 2017|./sort3.sh|Sorting file
+Sat Jun 17 05:03:48 PDT 2017|./sort3.sh|Sorting of data completed ! 
+Sat Jun 17 05:03:48 PDT 2017|./sort3.sh|Saved sorted data in file data.sorted
+Sat Jun 17 05:03:49 PDT 2017|./sort3.sh|name=aaaa   percentage=60
+Sat Jun 17 05:03:49 PDT 2017|./sort3.sh|name=bbbb   percentage=70
+Sat Jun 17 05:03:49 PDT 2017|./sort3.sh|name=cccc   percentage=50
+Sat Jun 17 05:03:49 PDT 2017|./sort3.sh|name=dddd   percentage=85
+Sat Jun 17 05:03:49 PDT 2017|./sort3.sh|Returning from method sort_data()
+Sat Jun 17 05:03:49 PDT 2017|./sort3.sh|*********Exiting**********
