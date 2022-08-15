@@ -1,0 +1,134 @@
+Server_Name     : server1#
+Ping_Test       : OK#
+Load_Average    : OK#
+Recent_Reboot   : System_was_rebooted_recently#
+CPU_Utilization : OK#
+Disk_Utilzation : /dev/sda1        77G   58G   15G  80% /----.host:/         181G  151G   31G  84% /mnt/hgfs----/dev/sr0         19M   19M     0 100% /media/apuser/OnePlus Drivers----/dev/sr1         19M   19M     0 100% /media/apuser/OnePlus Drivers1----#
+Output from ubuntu at Sat May 20 02:36:42 PDT 2017
+====================================================
+ 
+ 
+====================================================
+Server_Name     : server2#
+Ping_Test       : FAIL#
+Load_Average    : NA#
+Recent_Reboot   : NA#
+CPU_Utilization : NA#
+Disk_Utilzation : NA#
+System_Errors   : NA#
+====================================================
+ 
+ 
+====================================================
+Server_Name     : server3#
+Ping_Test       : OK#
+Load_Average    : OK#
+Recent_Reboot   : System_was_rebooted_recently#
+CPU_Utilization : OK#
+Disk_Utilzation : /dev/sda1        77G   58G   15G  80% /----.host:/         181G  151G   31G  84% /mnt/hgfs----/dev/sr0         19M   19M     0 100% /media/apuser/OnePlus Drivers----/dev/sr1         19M   19M     0 100% /media/apuser/OnePlus Drivers1----#
+Output from ubuntu at Sat May 20 02:37:00 PDT 2017
+====================================================
+ 
+ 
+====================================================
+Server_Name     : server4#
+Ping_Test       : FAIL#
+Load_Average    : NA#
+Recent_Reboot   : NA#
+CPU_Utilization : NA#
+Disk_Utilzation : NA#
+System_Errors   : NA#
+====================================================
+ 
+ 
+====================================================
+Server_Name     : server5#
+Ping_Test       : OK#
+Load_Average    : OK#
+Recent_Reboot   : System_was_rebooted_recently#
+CPU_Utilization : OK#
+Disk_Utilzation : /dev/sda1        77G   58G   15G  80% /----.host:/         181G  151G   31G  84% /mnt/hgfs----/dev/sr0         19M   19M     0 100% /media/apuser/OnePlus Drivers----/dev/sr1         19M   19M     0 100% /media/apuser/OnePlus Drivers1----#
+Output from ubuntu at Sat May 20 02:37:13 PDT 2017
+====================================================
+ 
+ 
+====================================================
+Server_Name     : server6#
+Ping_Test       : OK#
+Load_Average    : OK#
+Recent_Reboot   : System_was_rebooted_recently#
+CPU_Utilization : OK#
+Disk_Utilzation : /dev/sda1        77G   58G   15G  80% /----.host:/         181G  151G   31G  84% /mnt/hgfs----/dev/sr0         19M   19M     0 100% /media/apuser/OnePlus Drivers----/dev/sr1         19M   19M     0 100% /media/apuser/OnePlus Drivers1----#
+Output from ubuntu at Sat May 20 02:37:17 PDT 2017
+====================================================
+ 
+ 
+====================================================
+Server_Name     : server7#
+Ping_Test       : OK#
+Load_Average    : OK#
+Recent_Reboot   : System_was_rebooted_recently#
+CPU_Utilization : OK#
+Disk_Utilzation : /dev/sda1        77G   58G   15G  80% /----.host:/         181G  151G   31G  84% /mnt/hgfs----/dev/sr0         19M   19M     0 100% /media/apuser/OnePlus Drivers----/dev/sr1         19M   19M     0 100% /media/apuser/OnePlus Drivers1----#
+Output from ubuntu at Sat May 20 02:37:20 PDT 2017
+====================================================
+ 
+ 
+====================================================
+Server_Name     : server8#
+Ping_Test       : OK#
+Load_Average    : OK#
+Recent_Reboot   : System_was_rebooted_recently#
+CPU_Utilization : OK#
+Disk_Utilzation : /dev/sda1        77G   58G   15G  80% /----.host:/         181G  151G   31G  84% /mnt/hgfs----/dev/sr0         19M   19M     0 100% /media/apuser/OnePlus Drivers----/dev/sr1         19M   19M     0 100% /media/apuser/OnePlus Drivers1----#
+Output from ubuntu at Sat May 20 02:37:22 PDT 2017
+====================================================
+ 
+ 
+====================================================
+Server_Name     : server9#
+Ping_Test       : OK#
+Load_Average    : OK#
+Recent_Reboot   : System_was_rebooted_recently#
+CPU_Utilization : OK#
+Disk_Utilzation : /dev/sda1        77G   58G   15G  80% /----.host:/         181G  151G   31G  84% /mnt/hgfs----/dev/sr0         19M   19M     0 100% /media/apuser/OnePlus Drivers----/dev/sr1         19M   19M     0 100% /media/apuser/OnePlus Drivers1----#
+Output from ubuntu at Sat May 20 02:37:25 PDT 2017
+====================================================
+ 
+ 
+====================================================
+Server_Name     : server10#
+Ping_Test       : OK#
+Load_Average    : OK#
+Recent_Reboot   : System_was_rebooted_recently#
+CPU_Utilization : OK#
+Disk_Utilzation : /dev/sda1        77G   58G   15G  80% /----.host:/         181G  151G   31G  84% /mnt/hgfs----/dev/sr0         19M   19M     0 100% /media/apuser/OnePlus Drivers----/dev/sr1         19M   19M     0 100% /media/apuser/OnePlus Drivers1----#
+Output from ubuntu at Sat May 20 02:37:28 PDT 2017
+====================================================
+ 
+ 
+====================================================
+Server_Name     : server11#
+Ping_Test       : OK#
+Load_Average    : OK#
+Recent_Reboot   : System_was_rebooted_recently#
+CPU_Utilization : OK#
+Disk_Utilzation : /dev/sda1        77G   58G   15G  80% /----.host:/         181G  151G   31G  84% /mnt/hgfs----/dev/sr0         19M   19M     0 100% /media/apuser/OnePlus Drivers----/dev/sr1         19M   19M     0 100% /media/apuser/OnePlus Drivers1----#
+Output from ubuntu at Sat May 20 02:37:31 PDT 2017
+====================================================
+ 
+ 
+====================================================
+Server_Name     : server12#
+Ping_Test       : FAIL#
+Load_Average    : NA#
+Recent_Reboot   : NA#
+CPU_Utilization : NA#
+Disk_Utilzation : NA#
+System_Errors   : NA#
+====================================================
+ 
+ 
+====================================================
+Server_Name     : server13#
+Ping_Test       : OK#

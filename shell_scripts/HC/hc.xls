@@ -1,0 +1,16 @@
+SERVER_LIST# PING_TEST# LOAD# REBOOT_STATUS# CPU_UTILIZATION# DISK_UTILIZATION# CURRENT_ERRORS#
+OK# OK# System_was_rebooted_recently# OK# /dev/sda1 ubuntu 
+FAIL# NA# NA# NA# NA# NA# 
+OK# OK# System_was_rebooted_recently# OK# /dev/sda1 ubuntu 
+FAIL# NA# NA# NA# NA# NA# 
+OK# OK# System_was_rebooted_recently# OK# /dev/sda1 ubuntu 
+OK# OK# System_was_rebooted_recently# OK# /dev/sda1 ubuntu 
+OK# OK# System_was_rebooted_recently# OK# /dev/sda1 ubuntu 
+OK# OK# System_was_rebooted_recently# OK# /dev/sda1 ubuntu 
+OK# OK# System_was_rebooted_recently# OK# /dev/sda1 ubuntu 
+OK# OK# System_was_rebooted_recently# OK# /dev/sda1 ubuntu 
+OK# OK# System_was_rebooted_recently# OK# /dev/sda1 ubuntu 
+FAIL# NA# NA# NA# NA# NA# 
+OK# 
+
+

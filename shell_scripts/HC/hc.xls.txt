@@ -1,0 +1,16 @@
+SERVER_LIST#	PING_TEST#	LOAD#	REBOOT_STATUS#	CPU_UTILIZATION#	DISK_UTILIZATION#	CURRENT_ERRORS#
+server1#	OK#	OK#	System_was_rebooted_recently#	OK#	/dev/sda5	
+server2#	FAIL#	NA#	NA#	NA#	NA#	
+server3#	OK#	OK#	System_was_rebooted_recently#	OK#	/dev/sda5	
+server4#	FAIL#	NA#	NA#	NA#	NA#	
+server5#	OK#	OK#	System_was_rebooted_recently#	OK#	/dev/sda5	
+server6#	OK#	OK#	System_was_rebooted_recently#	OK#	/dev/sda5	
+server7#	OK#	OK#	System_was_rebooted_recently#	OK#	/dev/sda5	
+server8#	OK#	OK#	System_was_rebooted_recently#	OK#	/dev/sda5	
+server9#	OK#	OK#	System_was_rebooted_recently#	OK#	/dev/sda5	
+server10#	OK#	OK#	System_was_rebooted_recently#	OK#	/dev/sda5	
+server11#	OK#	OK#	System_was_rebooted_recently#	OK#	/dev/sda5	
+server12#	FAIL#	NA#	NA#	NA#	NA#	
+server13#	OK#	OK#	System_was_rebooted_recently#	OK#	/dev/sda5	
+server14#	OK#	OK#	System_was_rebooted_recently#	OK#	/dev/sda5	
+server15#	OK#	OK#	System_was_rebooted_recently#	OK#	/dev/sda5	

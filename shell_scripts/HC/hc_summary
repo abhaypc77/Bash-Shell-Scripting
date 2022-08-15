@@ -1,0 +1,11 @@
+SERVER_LIST# PING_TEST# LOAD# REBOOT_STATUS# CPU UTILIZATION# DISK_UTILIZATION# CURRENT_ERRORS#
+server1# OK# OK# OK# 99# OK#   OK#
+server2# OK# OK# OK# 99# OK#   OK#
+server3# OK# OK# OK# 99# OK#   OK#
+server4# OK# OK# OK# 99# OK#   OK#
+server5# OK# OK# OK# 99# OK#   OK#
+server6# OK# OK# OK# 99# OK#   OK#
+server7# OK# OK# OK# 99# OK#   OK#
+server8# OK# OK# OK# 99# OK#   OK#
+server9# OK# OK# OK# 99# OK#   OK#
+server10# OK# OK# OK# 99# OK#   OK#

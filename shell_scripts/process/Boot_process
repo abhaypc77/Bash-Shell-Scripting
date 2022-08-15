@@ -1,0 +1,81 @@
+When an x86 computer is booted, the processor looks at the end of the system memory for the BIOS (Basic Input/Output System) and runs it.
+The BIOS program is written into permanent read-only memory and is always available for use. 
+The BIOS provides the lowest level interface to peripheral devices and controls the first step of the boot process.
+
+The BIOS tests the system, looks for and checks peripherals, and then looks for a drive to use to boot the system.
+Usually it checks the floppy drive (or CD-ROM drive on many newer systems) for bootable media, if present, and then it looks to the hard drive. 
+The order of the drives used for booting is usually controlled by a particular BIOS setting on the system. 
+Once Linux is installed on the hard drive of a system, the BIOS looks for a Master Boot Record (MBR) starting at the 
+first sector on the first hard drive, loads its contents into memory, then passes control to it.
+
+This MBR contains instructions on how to load the GRUB (or LILO) boot-loader, using a pre-selected operating system. 
+The MBR then loads the boot-loader, which takes over the process (if the boot-loader is installed in the MBR). 
+In the default Red Hat Linux configuration, GRUB uses the settings in the MBR to display boot options in a menu. 
+Once GRUB has received the correct instructions for the operating system to start, either from its command line or 
+configuration file, it finds the necessary boot file and hands off control of the machine to that operating system.
+
+4.2.3. GRUB features
+
+This boot method is called direct loading because instructions are used to directly load the operating system, with no intermediary code between the boot-loaders and the operating system's main files (such as the kernel). The boot process used by other operating systems may differ slightly from the above, however. For example, Microsoft's DOS and Windows operating systems completely overwrite anything on the MBR when they are installed without incorporating any of the current MBR's configuration. This destroys any other information stored in the MBR by other operating systems, such as Linux. The Microsoft operating systems, as well as various other proprietary operating systems, are loaded using a chain loading boot method. With this method, the MBR points to the first sector of the partition holding the operating system, where it finds the special files necessary to actually boot that operating system.
+
+
+GRUB supports both boot methods, allowing you to use it with almost any operating system, most popular file systems, and almost any hard disk your BIOS can recognize.
+
+GRUB contains a number of other features; the most important include:
+
+GRUB provides a true command-based, pre-OS environment on x86 machines to allow maximum flexibility in loading operating systems with certain options or gathering information about the system.
+
+GRUB supports Logical Block Addressing (LBA) mode, needed to access many IDE and all SCSI hard disks. Before LBA, hard drives could encounter a 1024-cylinder limit, where the BIOS could not find a file after that point.
+
+GRUB's configuration file is read from the disk every time the system boots, preventing you from having to write over the MBR every time you change the boot options.
+
+A full description of GRUB may be found by issuing the info grub command or at the GRUB site. The Linux Documentation Project has a Multiboot with GRUB Mini-HOWTO.
+
+
+4.2.4. Init
+
+The kernel, once it is loaded, finds init in sbin and executes it.
+
+When init starts, it becomes the parent or grandparent of all of the processes that start up automatically on your Linux system. The first thing init does, is reading its initialization file, /etc/inittab. This instructs init to read an initial configuration script for the environment, which sets the path, starts swapping, checks the file systems, and so on. Basically, this step takes care of everything that your system needs to have done at system initialization: setting the clock, initializing serial ports and so forth.
+
+Then init continues to read the /etc/inittab file, which describes how the system should be set up in each run level and sets the default run level. A run level is a configuration of processes. All UNIX-like systems can be run in different process configurations, such as the single user mode, which is referred to as run level 1 or run level S (or s). In this mode, only the system administrator can connect to the system. It is used to perform maintenance tasks without risks of damaging the system or user data. Naturally, in this configuration we don't need to offer user services, so they will all be disabled. Another run level is the reboot run level, or run level 6, which shuts down all running services according to the appropriate procedures and then restarts the system.
+
+Use the who to check what your current run level is:
+
+
+willy@ubuntu:~$ who -r
+	run-level 2 2006-10-17 23:22		last=S
+	
+After having determined the default run level for your system, init starts all of the background processes necessary for the system to run by looking in the appropriate rc directory for that run level. init runs each of the kill scripts (their file names start with a K) with a stop parameter. It then runs all of the start scripts (their file names start with an S) in the appropriate run level directory so that all services and applications are started correctly. In fact, you can execute these same scripts manually after the system is finished booting with a command like /etc/init.d/httpd stop or service httpd stop logged in as root, in this case stopping the web server.
+
+Note	Special case
+ 	
+Note that on system startup, the scripts in rc2.d and rc3.d are usually executed. In that case, no services are stopped (at least not permanently). There are only services that are started.
+
+None of the scripts that actually start and stop the services are located in /etc/rc<x>.d. Rather, all of the files in /etc/rc<x>.d are symbolic links that point to the actual scripts located in /etc/init.d. A symbolic link is nothing more than a file that points to another file, and is used in this case because it can be created and deleted without affecting the actual scripts that kill or start the services. The symbolic links to the various scripts are numbered in a particular order so that they start in that order. You can change the order in which the services start up or are killed by changing the name of the symbolic link that refers to the script that actually controls the service. You can use the same number multiple times if you want a particular service started or stopped right before or after another service, as in the example below, listing the content of /etc/rc5.d, where crond and xfs are both started from a linkname starting with "S90". In this case, the scripts are started in alphabetical order.	
+	
+
+9.3. Run levels
+
+A run level is a state of init and the whole system that defines what system services are operating. Run levels are identified by numbers. Some system administrators use run levels to define which subsystems are working, e.g., whether X is running, whether the network is operational, and so on. Others have all subsystems always running or start and stop them individually, without changing run levels, since run levels are too coarse for controlling their systems. You need to decide for yourself, but it might be easiest to follow the way your Linux distribution does things.
+
+The following table defines how most Linux Distributions define the different run levels. However, run-levels 2 through 5 can be modified to suit your own tastes.
+
+Table 9-1. Run level numbers
+
+0	Halt the system.
+1	Single-user mode (for special administration).
+2	Local Multiuser with Networking but without network service (like NFS)
+3	Full Multiuser with Networking
+4	Not Used
+5	Full Multiuser with Networking and X Windows(GUI)
+6	Reboot.
+Services that get started at a certain runtime are determined by the contents of the various rcN.d directories. Most distributions locate these directories either at /etc/init.d/rcN.d or /etc/rcN.d. (Replace the N with the run-level number.)
+
+In each run-level you will find a series of if links pointing to start-up scripts located in /etc/init.d. The names of these links all start as either K or S, followed by a number. If the name of the link starts with an S, then that indicates the service will be started when you go into that run level. If the name of the link starts with a K, the service will be killed (if running).
+
+
+
+
+
+

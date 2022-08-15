@@ -1,0 +1,41 @@
+
+1.	for i in 1 2 3 4 5
+do
+    echo $i
+done
+
+2.	for i in {1..100..2}
+do
+  echo $i  > >file
+done
+
+3.	for i in `cat file`
+do
+   echo $line
+done
+4.	for i in `ls`
+do
+  echo “file = [$i]”
+done
+
+5.	no=1
+for  i in $*
+do
+   echo “argument $no = $i”
+   no=echo $(( $no + 1 ))
+done
+
+6. i=1
+for username in `awk -F: '{print $1}' /etc/passwd`
+do
+ echo "Username $((i++)) : $username"
+done
+
+7.
+ 
+for (( i=1; i <= 5; i++ ))
+do
+ echo "Random number $i: $RANDOM"
+done
+
+

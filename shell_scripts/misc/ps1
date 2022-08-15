@@ -1,0 +1,120 @@
+PS1 - to set the prompt string, ofcourse!
+PS2 - to set the subshell prompt string, which by default is ">", when we enter a command half and press enter, we get the subshell prompt string which is >, then we can complete the command and press enter, it runs. We can change the > to something by modifying this var
+PS3 - mostly used in ksh, this is used to define the prompt string displayed by 'select' command, which creates a menu, so in the menu, the prompt string for each option can be defined by changing this one
+PS4- we can debug a shell script by putting a set -x while running it, this enables to print each command and then its results a + sign is put before each command, this "+" prompt string can be changed by defining the PS4 var.
+
+The $PS1 is used to display the user and host information
+For example: thillaiselvan@webserver
+\u - Username
+\h – Hostname
+\w – Full pathname of current directory. 
+
+$PS2 this is used to continuation of command.
+Assume that you are typing a very lengthy commands that may be a sequence of some pipes.
+So at this time we can broken this into multiple lines using \ character.
+The default is '>'
+
+If the command is not ended properly this will appear.
+
+$PS3 this is the prompt for select inside a script
+
+Example: if you are not setting this variable then your select script will appear like this
+
+Code:
+select i in mon tue wed exit
+do
+  case $i in
+    mon) echo "Monday";;
+    tue) echo "Tuesday";;
+    wed) echo "Wednesday";;
+    exit) exit;;
+  esac
+done
+
+The output will look like this
+1) mon
+2) tue
+3) wed
+4) exit
+#? 1
+Monday
+#? 4
+[Note: This displays the default "#?" for select command prompt]
+[/code]
+
+If you are using the $PS3 then at this time this will be like this
+
+Code:
+PS3="Select a day (1-4): "
+select i in mon tue wed exit
+do
+  case $i in
+    mon) echo "Monday";;
+    tue) echo "Tuesday";;
+    wed) echo "Wednesday";;
+    exit) exit;;
+  esac
+done
+
+At this time the output will be like this
+
+Code:
+1) mon
+2) tue
+3) wed
+4) exit
+Select a day (1-4): 1
+Monday
+Select a day (1-4): 4
+[Note: This displays the modified "Select a day (1-4): "
+       for select command prompt]
+
+PS4 – Used by “set -x” to prefix tracing output
+defines the prompt that gets displayed, when you execute a shell script in debug mode as shown below.
+
+Shell script and output WITHOUT PS4:
+
+Code:
+cat ps4.sh
+
+set -x
+echo "PS4 demo script"
+ls -l /etc/ | wc -l
+du -sh ~
+
+Output is as follows
+
+Code:
+++ echo 'PS4 demo script'
+PS4 demo script
+++ ls -l /etc/
+++ wc -l
+243
+++ du -sh /home/thillaiselvan
+123M     /home/thillaiselvan
+[Note: This displays the default "++" while tracing the output using set -x]
+
+If we are using the PS4:
+
+Code:
+cat ps4.sh
+
+export PS4='$0.$LINENO+ '
+set -x
+echo "PS4 demo script"
+ls -l /etc/ | wc -l
+du -sh ~
+
+Output of this script is as follows
+
+
+Code:
+../ps4.sh.3+ echo 'PS4 demo script'
+PS4 demo script
+../ps4.sh.4+ ls -l /etc/
+../ps4.sh.4+ wc -l
+243
+../ps4.sh.5+ du -sh /home/thillaiselvan
+123M     /home/thillaiselvan
+[Note: This displays the modified "{script-name}.{line-number}+"
+       while tracing the output using set -x]

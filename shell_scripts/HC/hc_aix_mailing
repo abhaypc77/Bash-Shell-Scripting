@@ -1,0 +1,12 @@
+(echo "Hi All,
+
+ Please find below Health Check Report for AIX Servers:
+
+ `cat hc.logs`
+
+
+
+Regards,
+Abhay
+"
+ uuencode hc_summary hc_aix_summary.txt) | mail -s "SG >> AIX Health Check Report" DL-Unix-SG@hcl.in 
